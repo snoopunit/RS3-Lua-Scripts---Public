@@ -60,8 +60,6 @@ local Min_AFK = 30000                                       --Minimum idle time 
 local Max_AFK = 180000                                      --Maximum idle time in ms
 ------------------------END    SETUP------------------------
 
-local doorID = 111710
-local templeDoorID = 103952
 local PRAYER_TO_USE = nil
 local currentTarget = nil
 local antibans = 0
@@ -639,6 +637,9 @@ end
 
 --ZONE LOGIC
 function inOrOut()
+    local doorID = 111710
+    local templeDoorID = 103952
+
     local door = API.ReadAllObjectsArray({12}, {doorID}, {})
     if #door > 0 then
         print("inside")
